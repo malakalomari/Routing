@@ -1,0 +1,14 @@
+<h2>My Images</h2>
+<ul class="images">
+  <li *ngFor="let img of storedImg"
+      [class.selected]="img === selectedImage"
+      (click)="onSelect(img)">
+    <span class="badge">{{img.title}}</span> <span>{{img.description}} </span> {{img.date}}
+  </li>
+</ul>
+<div *ngIf="selectedImage">
+  <h2>
+    {{selectedImage.title | uppercase}} is my image
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

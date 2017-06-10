@@ -1,0 +1,27 @@
+<div>
+  <div class="form">
+    <input id="preview" type="file" (change)="PreviewImage($event)" accept="image/png, image/gif, image/jpeg"/>
+    <img [src]="img" class="preview" width="100%" height="100%">
+    <br><br>
+    <div>
+      <label for="title">Title:</label>
+      <br><input type="text" #titleInput id="title"/><br>
+      <label for="desc">Description:</label>
+      <br><input type="text" #descriptionInput id="desc" /><br>
+      <label for="date">Date:</label>
+      <br><input type="date" #dateInput id="date"/><br>
+    </div>
+    <button type="submit" (click) = 'imgInfo(titleInput.value,descriptionInput.value,dateInput.value)'>save</button>
+  </div>
+  <br>
+  <h3>Top Images</h3>
+  <div class="grid grid-pad">
+    <div *ngFor="let img of storedImg; let index = index;"  [routerLink]="['/detail', img.title]"  class="col-1-4" >
+      <a class="module hero">
+        <h4>{{img.title}}</h4>
+        <img [src]="img.img"/>
+      </a>
+      <button class="delete" (click)="delete(index)" >Delete</button>
+    </div>
+  </div>
+</div>

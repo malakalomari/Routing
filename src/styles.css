@@ -1,0 +1,72 @@
+body {
+  background-color: #b7f5c1;
+}
+
+h1 {
+  color: #28994f;
+  font-family: Monaco, "Lucida Console", monospace;
+  font-size: 200%;
+  position: relative;
+  background-color: #fefecd;
+  padding: 15px;
+  border-style: groove;
+}
+button {
+  font-family: Monaco, "Lucida Console", monospace;
+  font-size: 220%;
+  color: #28994f;
+  background-color: #f9f9c8;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+  width: 100%;
+}
+button:hover {
+  background-color: #fef9a2;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #248947;
+  border-radius: 4px;
+  background-color: #fafee2;
+  font-family: Monaco, "Lucida Console", monospace;
+  color: #258a62;
+}
+input[type=date] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #248947;
+  border-radius: 4px;
+  background-color: #fafee2;
+  font-family: Monaco, "Lucida Console", monospace;
+  color: #258a62;
+}
+input[type=file] {
+  width: 100%;
+  hight: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #248947;
+  border-radius: 4px;
+}
+label {
+  font-family: Monaco, "Lucida Console", monospace;
+  color: #28994f;
+}
+{
+  font-family: Monaco, "Lucida Console", monospace;
+}
+
