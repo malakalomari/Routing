@@ -24,4 +24,11 @@
       <button class="delete" (click)="delete(index)" >Delete</button>
     </div>
   </div>
+  <h2>Countries:</h2>
+  <ul class="countries">
+    <li *ngFor="let country of countries">
+      <span class="badge">{{country.name}}</span>
+    </li>
+  </ul>
+  <button (click)="getCountries()">Country</button>
 </div>

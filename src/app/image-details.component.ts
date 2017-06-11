@@ -4,6 +4,9 @@ import { Location } from '@angular/common';
 import { LocalstorageService } from './localstorage.service';
 import { Info } from './info';
 import 'rxjs/add/operator/switchMap';
+import { HttpService } from './http.service';
+import { Country } from './country';
+
 
 
 @Component ( {
@@ -13,8 +16,10 @@ import 'rxjs/add/operator/switchMap';
 
 export class ImageDetailsComponent implements OnInit {
   info: Info;
+  country: Country;
   constructor(
     private localstorageService: LocalstorageService,
+    private httpService: HttpService,
     private route: ActivatedRoute,
     private location: Location
   ) {}
@@ -26,4 +31,8 @@ export class ImageDetailsComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+ /* save(): void {
+    this.httpService.update(this.country)
+      .then(() => this.goBack());
+  }*/
 }

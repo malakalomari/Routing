@@ -3,6 +3,9 @@ import { Info } from './info';
 import {  LocalstorageService } from './localstorage.service';
 
 import { Router } from '@angular/router';
+import { Country } from './country';
+import { HttpService } from './http.service';
+
 @Component({
   selector: 'my-dashboard',
   templateUrl: './dashboard.component.html',
@@ -14,7 +17,10 @@ export class DashboardComponent implements OnInit {
   img = '';
   storedImg: Info[] = [] ;
   selectedImage: Info;
-  constructor(private element: ElementRef, private localstoraeService: LocalstorageService, private router: Router) {}
+  countries: Country[] = [];
+  errorMessage: string;
+  constructor(private element: ElementRef, private localstoraeService: LocalstorageService, private httpService: HttpService,
+              private router: Router) {}
   PreviewImage(event) {
     const reader = new FileReader();
     reader.onload = (e: any) => {
@@ -35,5 +41,14 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.storedImg =  this.localstoraeService.getImage();
        // .then(storedImg => this.storedImg = storedImg.slice(1, 5));
+    //this.getCountries();
+
+  }
+  getCountries(): void {
+    this.httpService
+      .getCountries()
+      .subscribe(
+        countries => this.countries = countries,
+        error =>  this.errorMessage = <any>error);
   }
 }

@@ -17,9 +17,6 @@ export class LocalstorageService {
     this.storedImg = JSON.parse(localStorage.getItem('imgData'));
     return  Promise.resolve(this.storedImg);
   }
-  remove(img: any) {
-    localStorage.clear();
-  }
   findImage(title: string): Promise<Info> {
     return this.getImages()
       .then(infos => infos.find( info => info.title === title));

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, JsonpModule  } from '@angular/http';
 
 
 import {ImageDetailsComponent} from './image-details.component';
@@ -10,6 +10,9 @@ import {AppComponent} from './app.component';
 import {DashboardComponent} from './dashboard.component';
 
 import { AppRoutingModule } from './app-routing.module';
+// import { CountryComponent } from './country.component';
+import { HttpService } from './http.service';
+
 
 
 
@@ -17,15 +20,16 @@ import { AppRoutingModule } from './app-routing.module';
   declarations: [
     AppComponent,
     ImageDetailsComponent,
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    JsonpModule
   ],
-  providers: [LocalstorageService],
+  providers: [LocalstorageService, HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
